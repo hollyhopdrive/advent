@@ -2,6 +2,9 @@ package sonar.data;
 
 import lombok.RequiredArgsConstructor;
 
+/**
+ * Simple implementation of discrete (single) sonar readings
+ */
 @RequiredArgsConstructor
 public class DiscreteSonarData implements SonarData {
 

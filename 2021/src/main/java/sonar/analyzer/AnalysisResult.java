@@ -2,6 +2,9 @@ package sonar.analyzer;
 
 import lombok.RequiredArgsConstructor;
 
+/**
+ * Result of a sonar analysis
+ */
 @RequiredArgsConstructor
 public class AnalysisResult {
 

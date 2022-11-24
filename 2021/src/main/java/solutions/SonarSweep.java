@@ -40,11 +40,12 @@ import sonar.analyzer.SonarAnalyzer;
  * In this example, there are 7 measurements that are larger than the previous measurement.
 
  * How many measurements are larger than the previous measurement?
- *
- * @author pmcarthur
  */
 public class SonarSweep {
 
+	/**
+	 * @param args The input data values as a string array
+	 */
     public static void main(String args[]) {
         
         Seabed seabed = new Seabed(args);

@@ -4,6 +4,9 @@ import java.util.stream.IntStream;
 
 import lombok.RequiredArgsConstructor;
 
+/**
+ * Proxy to apply a sliding window aggregation over sonar data
+ */
 @RequiredArgsConstructor
 public class SlidingWindowSonarData implements SonarData {
 

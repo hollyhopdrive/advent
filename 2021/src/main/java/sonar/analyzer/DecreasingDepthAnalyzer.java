@@ -5,6 +5,9 @@ import java.util.stream.IntStream;
 import sonar.Sonar;
 import sonar.data.SlidingWindowSonarData;
 
+/**
+ * Analyzes sonar data to count how often the depth decreases
+ */
 public class DecreasingDepthAnalyzer extends SonarAnalyzer {
 
     private final int window;

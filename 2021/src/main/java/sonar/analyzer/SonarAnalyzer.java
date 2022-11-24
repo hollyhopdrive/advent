@@ -5,6 +5,9 @@ import lombok.RequiredArgsConstructor;
 import sonar.Sonar;
 import sonar.data.SonarData;
 
+/**
+ * Analyzes sonar data in some way
+ */
 @RequiredArgsConstructor(access=AccessLevel.PROTECTED)
 public abstract class SonarAnalyzer {
 

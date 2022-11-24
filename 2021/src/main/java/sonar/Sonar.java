@@ -7,6 +7,10 @@ import lombok.RequiredArgsConstructor;
 import sonar.data.DiscreteSonarData;
 import sonar.data.SonarData;
 
+/**
+ * Obtains data from the environment and presents the dataset
+ *
+ */
 @RequiredArgsConstructor
 public class Sonar {
 
@@ -14,8 +18,6 @@ public class Sonar {
     
     /**
      * Converts raw (String input data) from the environment into usable quantitative readings
-     *
-     * @author pmcarthur
      */
     private static class DataAdapter {
         private final String[] raw;
