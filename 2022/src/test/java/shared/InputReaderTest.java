@@ -1,4 +1,4 @@
-package day1.inputs;
+package shared;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -6,7 +6,7 @@ import java.util.List;
 
 import org.junit.jupiter.api.Test;
 
-import day1.inputs.InputReader;
+import shared.InputReader;
 
 public class InputReaderTest {
 

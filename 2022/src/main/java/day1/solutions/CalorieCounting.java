@@ -3,8 +3,8 @@ package day1.solutions;
 import java.util.List;
 
 import day1.calories.CalorieAggregator;
-import day1.inputs.InputReader;
 import day1.inputs.NutritionalInfoReader;
+import shared.InputReader;
 
 /**
 --- Day 1: Calorie Counting ---

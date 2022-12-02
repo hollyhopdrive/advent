@@ -3,8 +3,8 @@ package day1.solutions;
 import java.util.List;
 
 import day1.calories.CalorieAggregator;
-import day1.inputs.InputReader;
 import day1.inputs.NutritionalInfoReader;
+import shared.InputReader;
 
 /**
 By the time you calculate the answer to the Elves' question, they've already realized that the Elf carrying the most Calories of food might eventually run out of snacks.
