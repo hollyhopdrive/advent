@@ -6,5 +6,5 @@ package day2.rps;
  */
 public interface Strategy {
 
-	Play getPlay(Play opponentPlay, String strategyCode);
+    Play getPlay(Play opponentPlay, String strategyCode);
 }

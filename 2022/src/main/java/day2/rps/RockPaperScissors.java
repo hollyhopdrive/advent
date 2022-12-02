@@ -1,21 +1,20 @@
 package day2.rps;
 
-
 public class RockPaperScissors {
-	
-	private final Strategy strategy;
-	private final Resolver resolver;
-	
-	public RockPaperScissors(final Strategy strategy, final Score p1, final Score p2) {
-		this.strategy = strategy;
-		this.resolver = new Resolver(p1, p2);
-	}
-	
-	public void playRound(final String input) {
-		String[] codes = input.split(" ");
-		Play p1Play = Play.fromCode(codes[0]);
-		Play p2Play = strategy.getPlay(p1Play, codes[1]);
-		
-		resolver.resolve(p1Play,  p2Play);
-	}
-} 
+
+    private final Strategy strategy;
+    private final Resolver resolver;
+
+    public RockPaperScissors(final Strategy strategy, final Score p1, final Score p2) {
+        this.strategy = strategy;
+        this.resolver = new Resolver(p1, p2);
+    }
+
+    public void playRound(final String input) {
+        String[] codes = input.split(" ");
+        Play p1Play = Play.fromCode(codes[0]);
+        Play p2Play = strategy.getPlay(p1Play, codes[1]);
+
+        resolver.resolve(p1Play, p2Play);
+    }
+}

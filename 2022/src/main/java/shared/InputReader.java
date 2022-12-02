@@ -8,9 +8,9 @@ import java.util.stream.Collectors;
 
 public class InputReader {
 
-	public List<String> readInputFile(final String path) {
-		InputStream stream = getClass().getClassLoader().getResourceAsStream(path);
-		BufferedReader reader = new BufferedReader(new InputStreamReader(stream));
-		return reader.lines().collect(Collectors.toList());
-	}
-} 
+    public List<String> readInputFile(final String path) {
+        InputStream stream = getClass().getClassLoader().getResourceAsStream(path);
+        BufferedReader reader = new BufferedReader(new InputStreamReader(stream));
+        return reader.lines().collect(Collectors.toList());
+    }
+}
