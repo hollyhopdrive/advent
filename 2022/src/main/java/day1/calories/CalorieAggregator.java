@@ -1,4 +1,4 @@
-package calories;
+package day1.calories;
 
 import java.util.Collections;
 import java.util.List;

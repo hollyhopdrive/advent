@@ -1,4 +1,4 @@
-package inputs;
+package day1.inputs;
 
 import java.util.ArrayList;
 import java.util.HashMap;

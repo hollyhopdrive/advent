@@ -1,10 +1,12 @@
-package inputs;
+package day1.inputs;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
+
+import day1.inputs.InputReader;
 
 public class InputReaderTest {
 

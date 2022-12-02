@@ -1,4 +1,4 @@
-package inputs;
+package day1.inputs;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -10,7 +10,7 @@ import java.util.Map;
 
 import org.junit.jupiter.api.Test;
 
-import calories.CalorieAggregator;
+import day1.calories.CalorieAggregator;
 
 public class CalorieAggregatorTest {
 

@@ -1,4 +1,4 @@
-package inputs;
+package day1.inputs;
 
 import java.io.BufferedReader;
 import java.io.InputStream;

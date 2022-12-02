@@ -1,10 +1,10 @@
-package solutions;
+package day1.solutions;
 
 import java.util.List;
 
-import calories.CalorieAggregator;
-import inputs.InputReader;
-import inputs.NutritionalInfoReader;
+import day1.calories.CalorieAggregator;
+import day1.inputs.InputReader;
+import day1.inputs.NutritionalInfoReader;
 
 /**
 --- Day 1: Calorie Counting ---
