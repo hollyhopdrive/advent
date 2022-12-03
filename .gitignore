@@ -1,0 +1,10 @@
+/.metadata/
+*/.metadata/
+
+/.settings/
+*/.settings/
+
+.project
+.classpath
+
+*/target/
