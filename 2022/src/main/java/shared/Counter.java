@@ -1,4 +1,4 @@
-package day1.inputs;
+package shared;
 
 import lombok.Getter;
 
@@ -17,4 +17,8 @@ public class Counter {
 	public int increment() {
 		return ++value;
 	}
+	
+	public void add(int amount) {
+	    value += amount;
+    }
 }

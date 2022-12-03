@@ -1,11 +1,13 @@
 package day2.rps;
 
+import shared.Counter;
+
 public class RockPaperScissors {
 
     private final Strategy strategy;
     private final Resolver resolver;
 
-    public RockPaperScissors(final Strategy strategy, final Score p1, final Score p2) {
+    public RockPaperScissors(final Strategy strategy, final Counter p1, final Counter p2) {
         this.strategy = strategy;
         this.resolver = new Resolver(p1, p2);
     }

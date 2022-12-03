@@ -3,8 +3,8 @@ package day2.solutions;
 import java.util.List;
 
 import day2.rps.RockPaperScissors;
-import day2.rps.Score;
 import day2.rps.Strategy;
+import shared.Counter;
 import shared.InputReader;
 
 public class GameRunner {
@@ -18,12 +18,12 @@ public class GameRunner {
 	public static int run(String path, Strategy strategy) {
 		
 		final List<String> lines = new InputReader().readInputFile(path);
-		final Score p1Score = new Score();
-		final Score p2Score = new Score();
+		final Counter p1Score = new Counter();
+		final Counter p2Score = new Counter();
 		final RockPaperScissors game = new RockPaperScissors(strategy, p1Score, p2Score);
 		
 		lines.forEach(l -> game.playRound(l));
 		
-		return p2Score.getScore();
+		return p2Score.getValue();
 	}
 }

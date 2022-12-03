@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import shared.Counter;
+
 /**
  * Reads the nutritional information from the food wrappers carried by elves
  *
