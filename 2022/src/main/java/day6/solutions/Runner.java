@@ -1,16 +1,10 @@
 package day6.solutions;
 
-import java.util.List;
-
-import shared.Counter;
-import shared.InputReader;
+import day6.solutions.buffer.SignalDetector;
 
 public class Runner {
 
-    public static int run(final String path) {
-        final List<String> input = new InputReader().readInputFile(path);
-        final Counter answer = new Counter();
-        input.forEach(l -> answer.increment());
-        return answer.getValue();
+    public static int run(final String input, final int signalLength) {
+        return new SignalDetector(signalLength).process(input);
     }
 }
