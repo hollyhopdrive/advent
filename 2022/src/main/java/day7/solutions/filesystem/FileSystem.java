@@ -41,10 +41,16 @@ public class FileSystem {
     public Node cd(final String name) {
         switch(name) {
             case ROOT: cwd = root; break;
-            case UP: cwd = cwd.getParent(); break;
+            case UP: {
+                if(cwd != root) {
+                    cwd = cwd.getParent(); break;
+                }
+                break;
+            }
             default: {
                 Node child = findChild(name);
                 cwd = child != null ? child : cwd;
+                break;
             }
         }
         return cwd;
@@ -73,7 +79,6 @@ public class FileSystem {
     public void mkdir(final String name) {
         if(name.equals(ROOT)) {
             root = new Directory(null, name);
-            cwd = root;
         } else {
             cwd.add(new Directory(cwd, name));
         }
