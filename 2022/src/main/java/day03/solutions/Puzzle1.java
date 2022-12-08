@@ -1,6 +1,6 @@
 package day03.solutions;
 
-import day03.packing.ReorgPrioritizationAction;
+import day03.solutions.packing.ReorgPrioritizationAction;
 
 /**
  * --- Day 3: Rucksack Reorganization ---

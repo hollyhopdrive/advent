@@ -1,6 +1,6 @@
 package day02.solutions;
 
-import day02.rps.CodifiedOutcome;
+import day02.solutions.rps.CodifiedOutcome;
 
 /**
  * --- Part Two ---
@@ -32,7 +32,7 @@ public class Puzzle2 {
 
     public static void main(String[] args) {
 
-        int score = GameRunner.run(args[0], new CodifiedOutcome());
+        int score = Runner.run(args[0], new CodifiedOutcome());
         System.out.println(score);
     }
 }

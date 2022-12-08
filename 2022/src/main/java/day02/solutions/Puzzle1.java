@@ -1,6 +1,6 @@
 package day02.solutions;
 
-import day02.rps.CodifiedPlay;
+import day02.solutions.rps.CodifiedPlay;
 
 /**
  * --- Day 2: Rock Paper Scissors ---
@@ -59,7 +59,7 @@ public class Puzzle1 {
 
     public static void main(String[] args) {
 
-        int score = GameRunner.run(args[0], new CodifiedPlay());
+        int score = Runner.run(args[0], new CodifiedPlay());
         System.out.println(score);
     }
 }

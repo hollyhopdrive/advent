@@ -2,8 +2,8 @@ package day03.solutions;
 
 import java.util.List;
 
-import day03.packing.Action;
-import day03.packing.BackPackInputProcessor;
+import day03.solutions.packing.Action;
+import day03.solutions.packing.BackPackInputProcessor;
 import shared.Counter;
 import shared.InputReader;
 

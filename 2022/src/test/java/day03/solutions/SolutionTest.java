@@ -4,8 +4,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-import day03.packing.BadgePrioritizationAction;
-import day03.packing.ReorgPrioritizationAction;
+import day03.solutions.packing.BadgePrioritizationAction;
+import day03.solutions.packing.ReorgPrioritizationAction;
 
 public class SolutionTest {
 

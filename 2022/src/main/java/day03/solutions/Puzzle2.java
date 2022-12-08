@@ -1,6 +1,6 @@
 package day03.solutions;
 
-import day03.packing.BadgePrioritizationAction;
+import day03.solutions.packing.BadgePrioritizationAction;
 
 public class Puzzle2 {
 
