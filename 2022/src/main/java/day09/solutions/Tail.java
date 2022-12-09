@@ -2,9 +2,8 @@ package day09.solutions;
 
 public class Tail extends Knot {
 
-    public Tail() {
-        super(new Coordinate(0, 0));
-        System.out.println("TAIL: " + location.toString());
+    public Tail(final Tail follower) {
+        super(new Coordinate(0, 0), follower);
     }
     
     public Coordinate follow(final Coordinate head) {
@@ -23,7 +22,6 @@ public class Tail extends Knot {
             location = new Coordinate(location.getX(), location.getY() + direction.getYAdjust());
         } 
 
-        System.out.println("TAIL: " + location.toString());
-        return location;
+        return moveTail();
     }
 }

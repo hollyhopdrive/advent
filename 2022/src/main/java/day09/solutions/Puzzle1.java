@@ -253,7 +253,7 @@ Simulate your complete hypothetical series of motions. How many positions does t
 public class Puzzle1 {
 
     public static void main(String[] args) {
-        int answer = Runner.run(args[0]);
+        int answer = Runner.run(args[0], 2);
         System.out.println(answer);
     }
 }

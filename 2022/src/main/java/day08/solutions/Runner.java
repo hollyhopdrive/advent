@@ -12,8 +12,7 @@ public class Runner {
         final List<String> input = new InputReader().readInputFile(path);
         
         final Grid grid = Grid.create(input);
-        System.out.println(grid.toString());
-
+        
         return grid.analyze(analyzer);
     }    
 }

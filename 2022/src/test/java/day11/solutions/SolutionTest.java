@@ -1,4 +1,4 @@
-package day09.solutions;
+package day11.solutions;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -8,21 +8,21 @@ public class SolutionTest {
 
     @Test
     public void testPuzzle1Sample() {
-        assertEquals(13, Runner.run("day09/sample.txt", 2));
+        assertEquals(0, Runner.run("day11/sample.txt"));
     }
     
     @Test
     public void testPuzzle1Real() {
-        assertEquals(5513, Runner.run("day09/input.txt", 2));
+        assertEquals(0, Runner.run("day11/input.txt"));
     }
     
     @Test
     public void testPuzzle2Sample() {
-        assertEquals(36, Runner.run("day09/sample2.txt", 10));
+        assertEquals(0, Runner.run("day11/sample.txt"));
     }
     
     @Test
     public void testPuzzle2Real() {
-        assertEquals(2427, Runner.run("day09/input.txt", 10));
+        assertEquals(0, Runner.run("day11/input.txt"));
     }
 }
