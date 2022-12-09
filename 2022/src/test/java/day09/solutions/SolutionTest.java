@@ -8,17 +8,17 @@ public class SolutionTest {
 
     @Test
     public void testPuzzle1Sample() {
-        assertEquals(0, Runner.run("day09/sample.txt"));
+        assertEquals(13, Runner.run("day09/sample.txt"));
     }
     
     @Test
     public void testPuzzle1Real() {
-        assertEquals(0, Runner.run("day09/input.txt"));
+        assertEquals(5513, Runner.run("day09/input.txt"));
     }
     
     @Test
     public void testPuzzle2Sample() {
-        assertEquals(0, Runner.run("day09/sample.txt"));
+        assertEquals(36, Runner.run("day09/sample.txt"));
     }
     
     @Test
