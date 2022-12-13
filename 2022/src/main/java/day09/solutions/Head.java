@@ -1,11 +1,12 @@
 package day09.solutions;
 
+import shared.Coordinate;
+import shared.Direction;
+
 public class Head extends Knot {
 
-
-    
     public Head(final Tail follower) {
-        super(new Coordinate(0, 0), follower);
+        super(new Coordinate(0, 4), follower);
     }
     
     /**

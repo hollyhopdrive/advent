@@ -1,9 +1,12 @@
 package day09.solutions;
 
+import shared.Coordinate;
+import shared.Direction;
+
 public class Tail extends Knot {
 
     public Tail(final Tail follower) {
-        super(new Coordinate(0, 0), follower);
+        super(new Coordinate(0, 4), follower);
     }
     
     public Coordinate follow(final Coordinate head) {
@@ -18,7 +21,7 @@ public class Tail extends Knot {
             location = new Coordinate(location.getX() + direction.getXAdjust(), location.getY());
         }  
         if(Math.abs(distdirY) == 2 || Math.abs(distdirX) + Math.abs(distdirY) > 2) {
-            Direction direction = distdirY > 0 ? Direction.U : Direction.D;
+            Direction direction = distdirY > 0 ? Direction.D : Direction.U;
             location = new Coordinate(location.getX(), location.getY() + direction.getYAdjust());
         } 
 

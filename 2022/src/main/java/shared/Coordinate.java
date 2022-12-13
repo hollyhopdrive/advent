@@ -1,4 +1,4 @@
-package day09.solutions;
+package shared;
 
 import lombok.Getter;
 

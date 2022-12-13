@@ -1,4 +1,4 @@
-package day09.solutions;
+package shared;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -7,11 +7,11 @@ import lombok.RequiredArgsConstructor;
 @Getter
 public enum Direction {
 
-    U(0,1),
-    D(0,-1),
-    R(1, 0),
-    L(-1, 0);
+    U(-1,0),
+    D(1,0),
+    R(0, 1),
+    L(0, -1);
     
-    private final int xAdjust;
     private final int yAdjust;
+    private final int xAdjust;
 }

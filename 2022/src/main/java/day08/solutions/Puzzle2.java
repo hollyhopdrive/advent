@@ -1,6 +1,10 @@
 package day08.solutions;
 
+import java.util.List;
+
 import day08.solutions.trees.ScenicAnalyzer;
+import shared.Grid;
+import shared.InputReader;
 
 /**
  * --- Part Two ---
@@ -47,7 +51,10 @@ Consider each tree on your map. What is the highest scenic score possible for an
 public class Puzzle2 {
 
     public static void main(String[] args) {
-        int answer = Runner.run(args[0], new ScenicAnalyzer());
+        final List<String> input = new InputReader().readInputFile(args[0]);
+        final Grid grid = Grid.create(input);
+        
+        int answer = Runner.run(new ScenicAnalyzer(grid));
         System.out.println(answer);
     }
 }

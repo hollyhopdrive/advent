@@ -1,6 +1,10 @@
 package day08.solutions;
 
+import java.util.List;
+
 import day08.solutions.trees.VisibilityAnalyzer;
+import shared.Grid;
+import shared.InputReader;
 
 /**
 --- Day 8: Treetop Tree House ---
@@ -38,7 +42,11 @@ Consider your map; how many trees are visible from outside the grid?
 public class Puzzle1 {
 
     public static void main(String[] args) {
-        int answer = Runner.run(args[0], new VisibilityAnalyzer());
+        
+        final List<String> input = new InputReader().readInputFile(args[0]);
+        final Grid grid = Grid.create(input);
+        
+        int answer = Runner.run(new VisibilityAnalyzer(grid));
         System.out.println(answer);
     }
 }

@@ -2,19 +2,23 @@ package day08.solutions.trees;
 
 import lombok.RequiredArgsConstructor;
 import shared.Counter;
+import shared.Grid;
+import shared.GridAnalyzer;
 
 @RequiredArgsConstructor
 public class VisibilityAnalyzer implements GridAnalyzer {
 
-    public int analyze(char[][] grid) {
+    private final Grid grid;
+    
+    public int analyze() {
 
         Counter visible = new Counter();
-        visible.add(outerTrees(grid));
+        visible.add(outerTrees());
         
         // Iterate over every inner tree, check for visibility
-        for(int x = 1; x < grid.length - 1; ++x) {
-            for(int y = 1; y < grid[0].length -1; ++y) {
-                if(isVisible(x, y, grid)) {
+        for(int y = 1; y < grid.getSizeY() - 1; ++y) {
+            for(int x = 1; x < grid.getSizeX() -1; ++x) {
+                if(isVisible(y, x)) {
                     visible.increment();
                 }
             }
@@ -23,18 +27,18 @@ public class VisibilityAnalyzer implements GridAnalyzer {
         return visible.getValue();
     }
     
-    public int outerTrees(char[][] grid) {
-        return 4 * grid.length - 4;
+    public int outerTrees() {
+        return 4 * grid.getSizeX() - 4;
     }
     
-    public boolean isVisible(int x, int y, char[][] grid) {
-        return isVisibleLeft(x, y, grid) || isVisibleRight(x, y, grid) || isVisibleUp(x, y, grid) || isVisibleDown(x, y, grid);
+    public boolean isVisible(int y, int x) {
+        return isVisibleLeft(y, x) || isVisibleRight(y, x) || isVisibleUp(y, x) || isVisibleDown(y, x);
     }
     
-    private boolean isVisibleLeft(int x, int y, char[][] grid) {
+    private boolean isVisibleLeft(int y, int x) {
         int pointer = x - 1;
         while(pointer >= 0) {
-            if(grid[pointer][y] >= grid[x][y]) {
+            if(grid.getValue(y, pointer) >= grid.getValue(y, x)) {
                 return false;
             }
             pointer--;
@@ -42,10 +46,10 @@ public class VisibilityAnalyzer implements GridAnalyzer {
         return true;
     }
     
-    private boolean isVisibleRight(int x, int y, char[][] grid) {
+    private boolean isVisibleRight(int y, int x) {
         int pointer = x + 1;
-        while(pointer < grid[x].length) {
-            if(grid[pointer][y] >= grid[x][y]) {
+        while(pointer < grid.getSizeX()) {
+            if(grid.getValue(y, pointer) >= grid.getValue(y, x)) {
                 return false;
             }
             pointer++;
@@ -53,10 +57,10 @@ public class VisibilityAnalyzer implements GridAnalyzer {
         return true;
     } 
     
-    private boolean isVisibleUp(int x, int y, char[][] grid) {
+    private boolean isVisibleUp(int y, int x) {
         int pointer = y - 1;
         while(pointer >= 0) {
-            if(grid[x][pointer] >= grid[x][y]) {
+            if(grid.getValue(pointer, x) >= grid.getValue(y, x)) {
                 return false;
             }
             pointer--;
@@ -64,10 +68,10 @@ public class VisibilityAnalyzer implements GridAnalyzer {
         return true;
     }
     
-    private boolean isVisibleDown(int x, int y, char[][] grid) {
+    private boolean isVisibleDown(int y, int x) {
         int pointer = y + 1;
-        while(pointer < grid[x].length) {
-            if(grid[x][pointer] >= grid[x][y]) {
+        while(pointer < grid.getSizeY()) {
+            if(grid.getValue(pointer, x) >= grid.getValue(y, x)) {
                 return false;
             }
             pointer++;

@@ -1,16 +1,18 @@
 package day12.solutions;
 
 import java.util.List;
+import java.util.Set;
 
-import shared.Counter;
+import day12.solutions.route.RouteAnalyzer;
+import shared.Grid;
 import shared.InputReader;
 
 public class Runner {
 
-    public static int run(final String path) {
+    public static int run(final String path, final Set<String> startPoints) {
         final List<String> input = new InputReader().readInputFile(path);
-        final Counter answer = new Counter();
-        input.forEach(l -> answer.increment());
-        return answer.getValue();
+
+        Grid grid = Grid.create(input);
+        return new RouteAnalyzer(grid, startPoints).analyze();
     }
 }

@@ -3,6 +3,7 @@ package day09.solutions;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import shared.Coordinate;
 
 @AllArgsConstructor
 public abstract class Knot {

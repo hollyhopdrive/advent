@@ -5,6 +5,8 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.IntStream;
 
+import shared.Coordinate;
+import shared.Direction;
 import shared.InputReader;
 
 public class Runner {
