@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
+import shared.Coordinate;
 import shared.Grid;
 import shared.InputReader;
 
@@ -22,21 +23,21 @@ public class VisibilityAnalyzerTest {
     public void testVisibleTrees() {
         Grid grid = Grid.create(new InputReader().readInputFile("day08/sample.txt"));
         VisibilityAnalyzer analyzer = createTestSubject(grid);
-        assertTrue(analyzer.isVisible(1, 1));
-        assertTrue(analyzer.isVisible(1, 2));
-        assertTrue(analyzer.isVisible(2, 1));
-        assertTrue(analyzer.isVisible(2, 3));
-        assertTrue(analyzer.isVisible(3, 2));
+        assertTrue(analyzer.isVisible(new Coordinate(1, 1)));
+        assertTrue(analyzer.isVisible(new Coordinate(1, 2)));
+        assertTrue(analyzer.isVisible(new Coordinate(2, 1)));
+        assertTrue(analyzer.isVisible(new Coordinate(2, 3)));
+        assertTrue(analyzer.isVisible(new Coordinate(3, 2)));
     }
     
     @Test
     public void testInvisibleTrees() {
         Grid grid = Grid.create(new InputReader().readInputFile("day08/sample.txt"));
         VisibilityAnalyzer analyzer = createTestSubject(grid);
-        assertFalse(analyzer.isVisible(1, 3));
-        assertFalse(analyzer.isVisible(2, 2));
-        assertFalse(analyzer.isVisible(3, 1));
-        assertFalse(analyzer.isVisible(3, 3));
+        assertFalse(analyzer.isVisible(new Coordinate(1, 3)));
+        assertFalse(analyzer.isVisible(new Coordinate(2, 2)));
+        assertFalse(analyzer.isVisible(new Coordinate(3, 1)));
+        assertFalse(analyzer.isVisible(new Coordinate(3, 3)));
     }
     
     private VisibilityAnalyzer createTestSubject(final Grid grid) {
