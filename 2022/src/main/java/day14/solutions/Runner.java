@@ -22,17 +22,4 @@ public class Runner {
         final FluidSimulator simulator = new FluidSimulator(cave, CaveBuilder.SAND_SOURCE);
         return simulator.analyze();
     }
-    /**
-    public static int runWithFloor(final String path) {
-        final List<String> input = new InputReader().readInputFile(path);
-        
-        final List<RockStructure> structures = input.stream().map(l -> RockStructure.Parser.parse(l)).collect(Collectors.toList());
-        structures.add(buildFloor(structures));
-        
-        final Grid cave = CaveBuilder.createCave(structures);
-        
-        final FluidSimulator simulator = new FluidSimulator(cave, CaveBuilder.SAND_SOURCE);
-        return simulator.analyze();
-    }
-    **/
 }

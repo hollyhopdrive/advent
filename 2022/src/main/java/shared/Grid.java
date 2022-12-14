@@ -179,7 +179,7 @@ public class Grid {
     /**
      * Apply a lambda to each location in the grid
      */
-    private void iterateAll(CoordinateActor a) {
+    private void iterateAll(final CoordinateActor a) {
         for(int y = 0; y < getSizeY(); ++y) {
             for(int x = 0; x < getSizeX(); ++x) {
                 a.act(y, x);
@@ -195,7 +195,7 @@ public class Grid {
     /**
      * Apply a lambda that may produce a Coordinate to each location in the grid
      */
-    private Coordinate iterateAll(CoordinateProducer p) {
+    private Coordinate iterateAll(final CoordinateProducer p) {
         for(int y = 0; y < getSizeY(); ++y) {
             for(int x = 0; x < getSizeX(); ++x) {
                 Coordinate c = p.producer(y, x);
