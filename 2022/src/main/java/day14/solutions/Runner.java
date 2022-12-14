@@ -16,7 +16,6 @@ public class Runner {
         
         final List<RockStructure> structures = input.stream().map(l -> RockStructure.Parser.parse(l)).collect(Collectors.toList());
         
-        // The max coordinates are zero based, so the size of the grid is +1 in each direction
         final Grid cave = CaveBuilder.createCave(structures, withFloor);
         
         final FluidSimulator simulator = new FluidSimulator(cave, CaveBuilder.SAND_SOURCE);
