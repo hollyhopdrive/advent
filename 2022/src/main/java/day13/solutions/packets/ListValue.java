@@ -9,11 +9,13 @@ public class ListValue implements Value {
 
     private final List<Value> values;
 
-    /**
-    public void add(Value value) {
-        values.add(value);
+    public Value get(int index) {
+        return values.get(index);
     }
-    **/
+    
+    public int size() {
+        return values.size();
+    }
     
     @Override
     public int hashCode() {
@@ -40,5 +42,8 @@ public class ListValue implements Value {
         return true;
     }
     
-    
+    @Override
+    public String toString() {
+        return values.toString();
+    }
 }

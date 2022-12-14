@@ -33,4 +33,9 @@ public class IntegerValue implements Value {
             return false;
         return true;
     }
+    
+    @Override
+    public String toString() {
+        return String.valueOf(value);
+    }
 }

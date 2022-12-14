@@ -1,9 +1,9 @@
-package day13.solutions;
+package day15.solutions;
 
 public class Puzzle2 {
 
     public static void main(String[] args) {
-        int answer = Runner.runPuzzle2(args[0]);
+        int answer = Runner.run(args[0]);
         System.out.println(answer);
     }
 }

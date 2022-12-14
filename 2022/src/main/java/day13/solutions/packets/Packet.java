@@ -2,13 +2,9 @@ package day13.solutions.packets;
 
 import java.util.List;
 
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
+public class Packet extends ListValue {
 
-@RequiredArgsConstructor
-public class Packet {
-
-    @Getter
-    private final List<Value> data;
-    
+    public Packet(final List<Value> values) {
+        super(values);
+    }
 }

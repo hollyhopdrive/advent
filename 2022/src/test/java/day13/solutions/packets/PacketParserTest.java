@@ -1,7 +1,6 @@
 package day13.solutions.packets;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -15,15 +14,14 @@ public class PacketParserTest {
     public void testParsePacket1() {
         final String line = "[1,1,3,1,1]";
         final Packet packet = createTestSubject().parsePacket(line);
+
+        assertEquals(5, packet.size());
         
-        List<Value> data = packet.getData();
-        assertEquals(5, data.size());
-        
-        assertEquals(new IntegerValue(1), data.get(0));
-        assertEquals(new IntegerValue(1), data.get(1));
-        assertEquals(new IntegerValue(3), data.get(2));
-        assertEquals(new IntegerValue(1), data.get(3));
-        assertEquals(new IntegerValue(1), data.get(4));
+        assertEquals(new IntegerValue(1), packet.get(0));
+        assertEquals(new IntegerValue(1), packet.get(1));
+        assertEquals(new IntegerValue(3), packet.get(2));
+        assertEquals(new IntegerValue(1), packet.get(3));
+        assertEquals(new IntegerValue(1), packet.get(4));
     }
     
     @Test
@@ -31,14 +29,13 @@ public class PacketParserTest {
         final String line = "[1,1,5,1,1]";
         final Packet packet = createTestSubject().parsePacket(line);
         
-        List<Value> data = packet.getData();
-        assertEquals(5, data.size());
+        assertEquals(5, packet.size());
         
-        assertEquals(new IntegerValue(1), data.get(0));
-        assertEquals(new IntegerValue(1), data.get(1));
-        assertEquals(new IntegerValue(5), data.get(2));
-        assertEquals(new IntegerValue(1), data.get(3));
-        assertEquals(new IntegerValue(1), data.get(4));
+        assertEquals(new IntegerValue(1), packet.get(0));
+        assertEquals(new IntegerValue(1), packet.get(1));
+        assertEquals(new IntegerValue(5), packet.get(2));
+        assertEquals(new IntegerValue(1), packet.get(3));
+        assertEquals(new IntegerValue(1), packet.get(4));
     }
     
     @Test
@@ -46,18 +43,17 @@ public class PacketParserTest {
         final String line = "[[1],[2,3,4]]";
         final Packet packet = createTestSubject().parsePacket(line);
         
-        List<Value> data = packet.getData();
-        assertEquals(2, data.size());
+        assertEquals(2, packet.size());
         
         List<Value> values1 = new ArrayList<>();
         values1.add(new IntegerValue(1));
-        assertEquals(new ListValue(values1), data.get(0));
+        assertEquals(new ListValue(values1), packet.get(0));
         
         List<Value> values2 = new ArrayList<>();
         values2.add(new IntegerValue(2));
         values2.add(new IntegerValue(3));
         values2.add(new IntegerValue(4));
-        assertEquals(new ListValue(values2), data.get(1));
+        assertEquals(new ListValue(values2), packet.get(1));
     }
     
     @Test
@@ -65,40 +61,37 @@ public class PacketParserTest {
         final String line = "[[1],4]";
         final Packet packet = createTestSubject().parsePacket(line);
         
-        List<Value> data = packet.getData();
-        assertEquals(2, data.size());
+        assertEquals(2, packet.size());
         
         List<Value> values1 = new ArrayList<>();
         values1.add(new IntegerValue(1));
-        assertEquals(new ListValue(values1), data.get(0));
+        assertEquals(new ListValue(values1), packet.get(0));
 
-        assertEquals(new IntegerValue(4), data.get(1));
+        assertEquals(new IntegerValue(4), packet.get(1));
     }
     
     @Test
     public void testParsePacket5() {
         final String line = "[9]";
         final Packet packet = createTestSubject().parsePacket(line);
+
+        assertEquals(1, packet.size());
         
-        List<Value> data = packet.getData();
-        assertEquals(1, data.size());
-        
-        assertEquals(new IntegerValue(9), data.get(0));
+        assertEquals(new IntegerValue(9), packet.get(0));
     }
     
     @Test
     public void testParsePacket6() {
         final String line = "[[8,7,6]]";
         final Packet packet = createTestSubject().parsePacket(line);
-        
-        List<Value> data = packet.getData();
-        assertEquals(1, data.size());
+
+        assertEquals(1, packet.size());
         
         List<Value> values1 = new ArrayList<>();
         values1.add(new IntegerValue(8));
         values1.add(new IntegerValue(7));
         values1.add(new IntegerValue(6));
-        assertEquals(new ListValue(values1), data.get(0));
+        assertEquals(new ListValue(values1), packet.get(0));
     }
     
     @Test
@@ -106,16 +99,15 @@ public class PacketParserTest {
         final String line = "[[4,4],4,4]";
         final Packet packet = createTestSubject().parsePacket(line);
         
-        List<Value> data = packet.getData();
-        assertEquals(3, data.size());
+        assertEquals(3, packet.size());
         
         List<Value> values1 = new ArrayList<>();
         values1.add(new IntegerValue(4));
         values1.add(new IntegerValue(4));
-        assertEquals(new ListValue(values1), data.get(0));
+        assertEquals(new ListValue(values1), packet.get(0));
 
-        assertEquals(new IntegerValue(4), data.get(1));
-        assertEquals(new IntegerValue(4), data.get(2));
+        assertEquals(new IntegerValue(4), packet.get(1));
+        assertEquals(new IntegerValue(4), packet.get(2));
     }
     
     @Test
@@ -123,17 +115,16 @@ public class PacketParserTest {
         final String line = "[[4,4],4,4,4]";
         final Packet packet = createTestSubject().parsePacket(line);
         
-        List<Value> data = packet.getData();
-        assertEquals(4, data.size());
+        assertEquals(4, packet.size());
         
         List<Value> values1 = new ArrayList<>();
         values1.add(new IntegerValue(4));
         values1.add(new IntegerValue(4));
-        assertEquals(new ListValue(values1), data.get(0));
+        assertEquals(new ListValue(values1), packet.get(0));
 
-        assertEquals(new IntegerValue(4), data.get(1));
-        assertEquals(new IntegerValue(4), data.get(2));
-        assertEquals(new IntegerValue(4), data.get(2));
+        assertEquals(new IntegerValue(4), packet.get(1));
+        assertEquals(new IntegerValue(4), packet.get(2));
+        assertEquals(new IntegerValue(4), packet.get(2));
     }
     
     @Test
@@ -141,32 +132,29 @@ public class PacketParserTest {
         final String line = "[]";
         final Packet packet = createTestSubject().parsePacket(line);
         
-        List<Value> data = packet.getData();
-        assertTrue(data.isEmpty());
+        assertEquals(0, packet.size());
     }
     
     @Test
     public void testParsePacket13() {
         final String line = "[[[]]]";
         final Packet packet = createTestSubject().parsePacket(line);
-        
-        List<Value> data = packet.getData();
-        assertEquals(1, data.size());
+
+        assertEquals(1, packet.size());
         
         List<Value> emptyInner = new ArrayList<>();
         ListValue inner = new ListValue(emptyInner);
         ListValue outer = new ListValue(Collections.singletonList(inner));
         
-        assertEquals(outer, data.get(0));
+        assertEquals(outer, packet.get(0));
     }
     
     @Test
     public void testParsePacket15() {
         final String line = "[1,[2,[3,[4,[5,6,7]]]],8,9]";
         final Packet packet = createTestSubject().parsePacket(line);
-        
-        List<Value> data = packet.getData();
-        assertEquals(4, data.size());
+
+        assertEquals(4, packet.size());
         
         List<Value> values1 = new ArrayList<>();
         values1.add(new IntegerValue(5));
@@ -189,27 +177,26 @@ public class PacketParserTest {
         values4.add(lv3);
         ListValue lv4 = new ListValue(values4);
         
-        assertEquals(new IntegerValue(1), data.get(0));
-        assertEquals(lv4, data.get(1));
-        assertEquals(new IntegerValue(8), data.get(2));
-        assertEquals(new IntegerValue(9), data.get(3));
+        assertEquals(new IntegerValue(1), packet.get(0));
+        assertEquals(lv4, packet.get(1));
+        assertEquals(new IntegerValue(8), packet.get(2));
+        assertEquals(new IntegerValue(9), packet.get(3));
     }
     
     @Test
     public void testParseInteger10() {
         final String line = "[[10,4],4,10]";
         final Packet packet = createTestSubject().parsePacket(line);
-        
-        List<Value> data = packet.getData();
-        assertEquals(3, data.size());
+
+        assertEquals(3, packet.size());
         
         List<Value> values1 = new ArrayList<>();
         values1.add(new IntegerValue(10));
         values1.add(new IntegerValue(4));
-        assertEquals(new ListValue(values1), data.get(0));
+        assertEquals(new ListValue(values1), packet.get(0));
 
-        assertEquals(new IntegerValue(4), data.get(1));
-        assertEquals(new IntegerValue(10), data.get(2));
+        assertEquals(new IntegerValue(4), packet.get(1));
+        assertEquals(new IntegerValue(10), packet.get(2));
     }
     
     private PacketParser createTestSubject() {
