@@ -3,7 +3,7 @@ package day13.solutions.packets;
 import java.util.Comparator;
 import java.util.List;
 
-public class ListValueComparator implements Comparator<Value> {
+public class ValueComparator implements Comparator<Value> {
 
     @Override
     public int compare(final Value lhs, final Value rhs) {

@@ -10,6 +10,7 @@ import day08.solutions.trees.ScenicAnalyzer;
 import day08.solutions.trees.VisibilityAnalyzer;
 import shared.Grid;
 import shared.GridAnalyzer;
+import shared.GridFactory;
 import shared.InputReader;
 
 public class SolutionTest {
@@ -46,6 +47,6 @@ public class SolutionTest {
     
     private Grid createGrid(final String path) {
         final List<String> input = new InputReader().readInputFile(path);
-        return Grid.create(input);
+        return GridFactory.createFromInput(input);
     }
 }

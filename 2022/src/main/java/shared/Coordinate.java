@@ -13,6 +13,18 @@ public class Coordinate {
         this.y = y;
     }
     
+    public Coordinate(final Coordinate c) {
+        this(c.getX(), c.getY());
+    }
+    
+    /**
+     * Accepts coordinates in the form "x,y" and parses to a Coordinate instance
+     */
+    public static Coordinate parse(String value) {
+        final String[] xy = value.split(",");
+        return new Coordinate(Integer.parseInt(xy[0]), Integer.parseInt(xy[1]));
+    }
+    
     @Override
     public int hashCode() {
         final int prime = 31;

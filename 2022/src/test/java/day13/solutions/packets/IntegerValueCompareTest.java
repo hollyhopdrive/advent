@@ -17,7 +17,7 @@ public class IntegerValueCompareTest {
         IntegerValue lhs = new IntegerValue(6);
         IntegerValue rhs = new IntegerValue(8);
         
-        ListValueComparator comparator = new ListValueComparator();
+        ValueComparator comparator = new ValueComparator();
         assertTrue(comparator.compare(lhs, rhs) < 0);
         assertTrue(comparator.compare(rhs, lhs) > 0);
         assertEquals(0, comparator.compare(lhs, lhs));
@@ -31,7 +31,7 @@ public class IntegerValueCompareTest {
         values.add(new IntegerValue(6));
         values.add(new IntegerValue(10));
         
-        Collections.sort(values, new ListValueComparator());
+        Collections.sort(values, new ValueComparator());
 
         assertEquals(new IntegerValue(6), values.get(0));
         assertEquals(new IntegerValue(8), values.get(1));
@@ -40,7 +40,7 @@ public class IntegerValueCompareTest {
     
     @Test
     public void testEqual() {
-        ListValueComparator comparator = new ListValueComparator();
+        ValueComparator comparator = new ValueComparator();
         assertEquals(0, comparator.compare(new IntegerValue(8), new IntegerValue(8)));
     }
 }

@@ -6,13 +6,14 @@ import org.junit.jupiter.api.Test;
 
 import shared.Coordinate;
 import shared.Grid;
+import shared.GridFactory;
 import shared.InputReader;
 
 public class ScenicAnalyzerTest {
 
     @Test
     public void testScenicScores() {
-        Grid grid = Grid.create(new InputReader().readInputFile("day08/sample.txt"));
+        Grid grid = GridFactory.createFromInput(new InputReader().readInputFile("day08/sample.txt"));
         ScenicAnalyzer analyzer = createTestSubject(grid);
         
         assertEquals(1, analyzer.scenicScore(new Coordinate(1, 1)));

@@ -8,20 +8,21 @@ import org.junit.jupiter.api.Test;
 
 import shared.Coordinate;
 import shared.Grid;
+import shared.GridFactory;
 import shared.InputReader;
 
 public class VisibilityAnalyzerTest {
     
     @Test
     public void testOuterTreeCount() {
-        Grid grid = Grid.create(new InputReader().readInputFile("day08/sample.txt"));
+        Grid grid = GridFactory.createFromInput(new InputReader().readInputFile("day08/sample.txt"));
         VisibilityAnalyzer analyzer = createTestSubject(grid);
         assertEquals(16, analyzer.outerTrees());
     }
     
     @Test
     public void testVisibleTrees() {
-        Grid grid = Grid.create(new InputReader().readInputFile("day08/sample.txt"));
+        Grid grid = GridFactory.createFromInput(new InputReader().readInputFile("day08/sample.txt"));
         VisibilityAnalyzer analyzer = createTestSubject(grid);
         assertTrue(analyzer.isVisible(new Coordinate(1, 1)));
         assertTrue(analyzer.isVisible(new Coordinate(1, 2)));
@@ -32,7 +33,7 @@ public class VisibilityAnalyzerTest {
     
     @Test
     public void testInvisibleTrees() {
-        Grid grid = Grid.create(new InputReader().readInputFile("day08/sample.txt"));
+        Grid grid = GridFactory.createFromInput(new InputReader().readInputFile("day08/sample.txt"));
         VisibilityAnalyzer analyzer = createTestSubject(grid);
         assertFalse(analyzer.isVisible(new Coordinate(1, 3)));
         assertFalse(analyzer.isVisible(new Coordinate(2, 2)));

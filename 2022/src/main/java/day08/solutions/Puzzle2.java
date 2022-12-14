@@ -4,6 +4,7 @@ import java.util.List;
 
 import day08.solutions.trees.ScenicAnalyzer;
 import shared.Grid;
+import shared.GridFactory;
 import shared.InputReader;
 
 /**
@@ -52,7 +53,7 @@ public class Puzzle2 {
 
     public static void main(String[] args) {
         final List<String> input = new InputReader().readInputFile(args[0]);
-        final Grid grid = Grid.create(input);
+        final Grid grid = GridFactory.createFromInput(input);
         
         int answer = Runner.run(new ScenicAnalyzer(grid));
         System.out.println(answer);

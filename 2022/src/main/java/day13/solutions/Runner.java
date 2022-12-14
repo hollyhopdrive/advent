@@ -6,7 +6,7 @@ import java.util.List;
 
 import day13.solutions.packets.Packet;
 import day13.solutions.packets.PacketParser;
-import day13.solutions.packets.ListValueComparator;
+import day13.solutions.packets.ValueComparator;
 import shared.Counter;
 import shared.InputReader;
 
@@ -17,7 +17,7 @@ public class Runner {
         final List<Packet> packets = createPackets(path);
         
         final Counter rightOrderIndexSum = new Counter();
-        final ListValueComparator comparator = new ListValueComparator();
+        final ValueComparator comparator = new ValueComparator();
         
         for(int p = 1, i = 0; i < packets.size(); p++, i+=2) {
             Packet p1 = packets.get(i);
@@ -40,7 +40,7 @@ public class Runner {
         packets.add(divider1);
         packets.add(divider2);
         
-        Collections.sort(packets, new ListValueComparator());
+        Collections.sort(packets, new ValueComparator());
 
         return (packets.indexOf(divider1) + 1) * (packets.indexOf(divider2) + 1);
     }

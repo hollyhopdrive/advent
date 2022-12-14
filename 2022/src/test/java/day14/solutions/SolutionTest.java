@@ -8,21 +8,21 @@ public class SolutionTest {
 
     @Test
     public void testPuzzle1Sample() {
-        assertEquals(0, Runner.run("day14/sample.txt"));
+        assertEquals(24, Runner.run("day14/sample.txt", false));
     }
     
     @Test
     public void testPuzzle1Real() {
-        assertEquals(0, Runner.run("day14/input.txt"));
+        assertEquals(862, Runner.run("day14/input.txt", false));
     }
     
     @Test
     public void testPuzzle2Sample() {
-        assertEquals(0, Runner.run("day14/sample.txt"));
+        assertEquals(93, Runner.run("day14/sample.txt", true));
     }
     
     @Test
     public void testPuzzle2Real() {
-        assertEquals(0, Runner.run("day14/input.txt"));
+        assertEquals(28744, Runner.run("day14/input.txt", true));
     }
 }
