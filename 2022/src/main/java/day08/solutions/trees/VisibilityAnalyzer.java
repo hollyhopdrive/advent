@@ -6,11 +6,12 @@ import shared.Counter;
 import shared.Direction;
 import shared.Grid;
 import shared.GridAnalyzer;
+import shared.GridInterface;
 
 @RequiredArgsConstructor
 public class VisibilityAnalyzer implements GridAnalyzer {
 
-    private final Grid grid;
+    private final GridInterface grid;
 
     public int analyze() {
 

@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import day14.solutions.rocks.CaveBuilder;
 import day14.solutions.rocks.RockStructure;
-import shared.Grid;
+import shared.GridInterface;
 
 public class CaveBuilderTest {
 
@@ -18,7 +18,7 @@ public class CaveBuilderTest {
         List<RockStructure> structures = List.of(
                 RockStructure.Parser.parse("498,4 -> 498,6 -> 496,6"),
                 RockStructure.Parser.parse("503,4 -> 502,4 -> 502,9 -> 494,9"));
-        Grid cave = CaveBuilder.createCave(structures, false);
+        GridInterface cave = CaveBuilder.createCave(structures, false);
         System.out.println(cave.toString());
         assertEquals(
                     "......+...\n"

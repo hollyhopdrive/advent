@@ -24,22 +24,6 @@ public class RockStructure {
     @Getter
     private final List<Coordinate> path;
     
-    public int minX() {
-        return path.stream().map(p -> p.getX()).collect(Collectors.minBy(Integer::compare)).get();
-    }
-    
-    public int maxX() {
-        return path.stream().map(p -> p.getX()).collect(Collectors.maxBy(Integer::compare)).get();
-    }
-    
-    public int minY() {
-        return path.stream().map(p -> p.getY()).collect(Collectors.minBy(Integer::compare)).get();
-    }
-    
-    public int maxY() {
-        return path.stream().map(p -> p.getY()).collect(Collectors.maxBy(Integer::compare)).get();
-    }
-    
     /**
      * Expand the basic rock structure co-ordinates to a list of Vectors
      */

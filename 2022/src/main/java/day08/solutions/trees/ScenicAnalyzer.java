@@ -5,11 +5,12 @@ import shared.Coordinate;
 import shared.Direction;
 import shared.Grid;
 import shared.GridAnalyzer;
+import shared.GridInterface;
 
 @RequiredArgsConstructor
 public class ScenicAnalyzer implements GridAnalyzer {
     
-    private final Grid grid;
+    private final GridInterface grid;
     
     public int analyze() {
     

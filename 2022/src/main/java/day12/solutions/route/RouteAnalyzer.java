@@ -12,11 +12,12 @@ import shared.Coordinate;
 import shared.Direction;
 import shared.Grid;
 import shared.GridAnalyzer;
+import shared.GridInterface;
 
 @RequiredArgsConstructor
 public class RouteAnalyzer implements GridAnalyzer {
 
-    private final Grid grid;
+    private final GridInterface grid;
     
     private static final char END = 'E';
 

@@ -22,12 +22,4 @@ public class RockStructureTest {
         assertEquals(new Coordinate(502, 9), path.get(2));
         assertEquals(new Coordinate(494, 9), path.get(3));
     }
-    
-    @Test
-    public void testMaxExtents() {
-        RockStructure structure = RockStructure.Parser.parse("503,4 -> 502,4 -> 502,9 -> 494,9");
-        
-        assertEquals(503, structure.maxX());
-        assertEquals(9, structure.maxY());
-    }
 }

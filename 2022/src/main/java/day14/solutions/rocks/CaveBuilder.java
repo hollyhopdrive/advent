@@ -4,33 +4,34 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import shared.Coordinate;
+import shared.CoordinateMath;
 import shared.Grid;
+import shared.GridInterface;
 
 public class CaveBuilder {
 
     public static final Coordinate SAND_SOURCE = new Coordinate(500, 0);
     
-    public static Grid createCave(final List<RockStructure> structures, final boolean withFloor) {
+    public static GridInterface createCave(final List<RockStructure> structures, final boolean withFloor) {
         
-        int maxY = structures.stream().map(s -> s.maxY()).collect(Collectors.maxBy(Integer::compare)).get();
+        List<List<Coordinate>> coords = structures.stream().map(s -> s.getPath()).collect(Collectors.toList());
+        int maxY = CoordinateMath.maxYList(coords);
         if(withFloor) {
             // If the floor is added, then it will be 2 levels below maxY, increasing maxY by 2
             maxY += 2;
             structures.add(createFloor(maxY));
+            
+            // Re-gather the coordinates now the floor is added, for min/max x purposes
+            coords = structures.stream().map(s -> s.getPath()).collect(Collectors.toList());  
         }
         
-        final int maxX = Math.max(
-                structures.stream().map(s -> s.maxX()).collect(Collectors.maxBy(Integer::compare)).get(), 
-                SAND_SOURCE.getX());
-        
-        final int minX = Math.min(
-                structures.stream().map(s -> s.minX()).collect(Collectors.minBy(Integer::compare)).get(),
-                SAND_SOURCE.getX());
+        final int maxX = Math.max(CoordinateMath.maxXList(coords), SAND_SOURCE.getX());
+        final int minX = Math.min(CoordinateMath.minXList(coords), SAND_SOURCE.getX()) ;
         
         // We know the roof of the cave is always at y=0, because that's where the sand source is
         final int minY = 0; 
         
-        final Grid cave = new Grid(maxY - minY + 1, maxX - minX + 1, minY, minX);
+        final GridInterface cave = new Grid(maxY - minY + 1, maxX - minX + 1, minY, minX);
         fillCave(cave, structures);
         return cave;
     }
@@ -56,8 +57,8 @@ public class CaveBuilder {
     /**
      * Fill the cave with air, the sand source, and rocks
      */
-    private static void fillCave(final Grid cave, final List<RockStructure> structures) {
-        cave.setValueAll(Symbol.AIR);
+    private static void fillCave(final GridInterface cave, final List<RockStructure> structures) {
+        cave.fill(Symbol.AIR);
         cave.setValue(new Coordinate(500, 0), Symbol.SOURCE);
         
         structures.forEach(s -> {

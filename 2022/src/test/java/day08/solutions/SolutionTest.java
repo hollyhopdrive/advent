@@ -8,9 +8,9 @@ import org.junit.jupiter.api.Test;
 
 import day08.solutions.trees.ScenicAnalyzer;
 import day08.solutions.trees.VisibilityAnalyzer;
-import shared.Grid;
 import shared.GridAnalyzer;
 import shared.GridFactory;
+import shared.GridInterface;
 import shared.InputReader;
 
 public class SolutionTest {
@@ -45,7 +45,7 @@ public class SolutionTest {
         return new ScenicAnalyzer(createGrid(path));
     }
     
-    private Grid createGrid(final String path) {
+    private GridInterface createGrid(final String path) {
         final List<String> input = new InputReader().readInputFile(path);
         return GridFactory.createFromInput(input);
     }

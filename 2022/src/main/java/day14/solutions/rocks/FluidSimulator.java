@@ -2,19 +2,19 @@ package day14.solutions.rocks;
 
 import shared.Coordinate;
 import shared.Direction;
-import shared.Grid;
 import shared.GridAnalyzer;
+import shared.GridInterface;
 
 public class FluidSimulator implements GridAnalyzer {
 
-    private final Grid cave;
+    private final GridInterface cave;
     
     // The source of the sand
     private final Coordinate sandSource;
     
     private boolean terminated;
     
-    public FluidSimulator(final Grid cave, final Coordinate sandSource) {
+    public FluidSimulator(final GridInterface cave, final Coordinate sandSource) {
         this.cave = cave;
         this.sandSource = sandSource;
         terminated = false;

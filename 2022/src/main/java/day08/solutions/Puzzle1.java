@@ -3,8 +3,8 @@ package day08.solutions;
 import java.util.List;
 
 import day08.solutions.trees.VisibilityAnalyzer;
-import shared.Grid;
 import shared.GridFactory;
+import shared.GridInterface;
 import shared.InputReader;
 
 /**
@@ -45,7 +45,7 @@ public class Puzzle1 {
     public static void main(String[] args) {
         
         final List<String> input = new InputReader().readInputFile(args[0]);
-        final Grid grid = GridFactory.createFromInput(input);
+        final GridInterface grid = GridFactory.createFromInput(input);
         
         int answer = Runner.run(new VisibilityAnalyzer(grid));
         System.out.println(answer);

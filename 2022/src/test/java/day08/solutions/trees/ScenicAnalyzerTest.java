@@ -5,15 +5,15 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
 
 import shared.Coordinate;
-import shared.Grid;
 import shared.GridFactory;
+import shared.GridInterface;
 import shared.InputReader;
 
 public class ScenicAnalyzerTest {
 
     @Test
     public void testScenicScores() {
-        Grid grid = GridFactory.createFromInput(new InputReader().readInputFile("day08/sample.txt"));
+        GridInterface grid = GridFactory.createFromInput(new InputReader().readInputFile("day08/sample.txt"));
         ScenicAnalyzer analyzer = createTestSubject(grid);
         
         assertEquals(1, analyzer.scenicScore(new Coordinate(1, 1)));
@@ -30,7 +30,7 @@ public class ScenicAnalyzerTest {
         
     }
     
-    private ScenicAnalyzer createTestSubject(final Grid grid) {
+    private ScenicAnalyzer createTestSubject(final GridInterface grid) {
         return new ScenicAnalyzer(grid);
     }
 }
